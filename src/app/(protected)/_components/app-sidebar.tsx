@@ -55,6 +55,17 @@ const items = [
   },
 ];
 
+// Função utilitária para extrair as iniciais do nome
+function getInitials(name?: string) {
+  if (!name) return "";
+  const names = name.trim().split(" ");
+  if (names.length === 1) return names[0][0]?.toUpperCase() ?? "";
+  return (
+    (names[0][0] ?? "").toUpperCase() +
+    (names[names.length - 1][0] ?? "").toUpperCase()
+  );
+}
+
 export function AppSidebar() {
   const router = useRouter();
   const session = authClient.useSession();
@@ -100,7 +111,9 @@ export function AppSidebar() {
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton size="lg">
                   <Avatar>
-                    <AvatarFallback>F</AvatarFallback>
+                    <AvatarFallback>
+                      {getInitials(session.data?.user?.name)}
+                    </AvatarFallback>
                   </Avatar>
                   <div>
                     <p className="text-sm">
