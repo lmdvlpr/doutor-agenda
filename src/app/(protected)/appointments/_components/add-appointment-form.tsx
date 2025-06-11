@@ -102,6 +102,7 @@ const AddAppointmentForm = ({
         date: dayjs(selectedDate).format("YYYY-MM-DD"),
         doctorId: selectedDoctorId,
       }),
+    enabled: !!selectedDate && !!selectedDoctorId,
   });
 
   // Atualizar o preço quando o médico for selecionado
@@ -146,6 +147,19 @@ const AddAppointmentForm = ({
       ...values,
       appointmentPriceInCents: values.appointmentPrice * 100,
     });
+  };
+
+  const isDateAvailable = (date: Date) => {
+    if (!selectedDoctorId) return false;
+    const selectedDoctor = doctors.find(
+      (doctor) => doctor.id === selectedDoctorId,
+    );
+    if (!selectedDoctor) return false;
+    const dayOfWeek = date.getDay();
+    return (
+      dayOfWeek >= selectedDoctor?.availableFromWeekDay &&
+      dayOfWeek <= selectedDoctor?.availableToWeekDay
+    );
   };
 
   const isDateTimeEnabled = selectedPatientId && selectedDoctorId;
@@ -272,8 +286,8 @@ const AddAppointmentForm = ({
                       mode="single"
                       selected={field.value}
                       onSelect={field.onChange}
-                      disabled={(date: Date) =>
-                        date < new Date() || date < new Date("1900-01-01")
+                      disabled={(date) =>
+                        date < new Date() || !isDateAvailable(date)
                       }
                       initialFocus
                     />
@@ -302,8 +316,12 @@ const AddAppointmentForm = ({
                   </FormControl>
                   <SelectContent>
                     {availableTimes?.data?.map((time) => (
-                      <SelectItem key={time.value} value={time.value}>
-                        {time.label}
+                      <SelectItem
+                        key={time.value}
+                        value={time.value}
+                        disabled={!time.available}
+                      >
+                        {time.label} {!time.available && "(Indisponível)"}
                       </SelectItem>
                     ))}
                   </SelectContent>
