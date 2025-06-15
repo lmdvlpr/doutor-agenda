@@ -1,23 +1,60 @@
-## Roteiro Aula 01: Setup do Projeto
+<p align="center">
+  <img alt="Dr. Agenda Preview" src="public/logo.svg" width="40%">
+</p>
 
-- [x] Inicialização do projeto Next.js
-- [x] Configuração de ferramentas (ESlint, Prettier, Tailwind)
-- [x] Configuração do Drizzle e banco de dados
-- [x] Configuração do shadcn/ui
+> **Dr. Agenda** é uma plataforma web para gestão de clínicas médicas, permitindo o gerenciamento de profissionais, pacientes, agendamentos e controle de disponibilidade de horários de forma simples e eficiente.
 
-## Roteiro Aula 02: Autenticação e Configurações do Estabelecimento
+<p align="center">
+  <a href="#-funcionalidades">Funcionalides</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias-utilizadas">Tecnologias Utilizadas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-imagens-do-projeto">Imagens do Projeto</a>
+</p>
 
-- [x] Tela de login e criação de conta
-- [x] Login com e-mail e senha
-- [x] Login com o Google
-- [x] Fundamentos do Next.js (Rotas, Páginas, Layouts)
-- [x] Criação de clínica
+<br>
 
-## Roteiro Aula 03: Gerenciamento de Profissionais e Disponibilidade
+<p align="center">
+  <img alt="Dr. Agenda Preview" src="public/preview.png" width="100%">
+</p>
 
-- [] Sidebar e Route Groups
-- [] Página de médicos
-- [] Criação de médicos & NextSafeAction
-- [] Listagem de médicos
-- [] Atualização de médicos
-- [] Deleção de médicos
+
+## 🚀 Funcionalidades
+
+- Cadastro e Autenticação de Usuários (incluindo login social com Google)
+- Criação e Gerenciamento de Clínicas
+- Cadastro, listagem, atualização e exclusão de médicos
+- Controle de agenda e horários disponíveis para agendamento
+- Cadastro e Gerenciamento de Pacientes
+- Visualização de estatísticas e gráficos do consultório
+- Integração com Stripe para pagamentos e assinaturas
+
+## 💻 Tecnologias Utilizadas
+
+- **Next.js** — Framework React para aplicações web modernas
+- **TypeScript** — Tipagem estática para maior segurança
+- **Drizzle ORM** — Mapeamento objeto-relacional para banco de dados
+- **Tailwind CSS** — Estilização rápida e responsiva
+- **shadcn/ui** — Componentes de UI acessíveis e customizáveis
+- **ESLint & Prettier** — Padronização e qualidade de código
+- **Stripe** — Pagamentos e assinaturas
+
+## Imagens do Projeto
+
+> Veja imagens abaixo do sistema em funcionamento.
+
+### Tela de Login
+![Exemplo de tela de login](public/preview.png)
+
+### Dashboard
+![Exemplo de dashboard](public/example-dashboard.png)
+
+### Listagem de Médicos
+![Exemplo de listagem de médicos](public/example-doctors.png)
+
+### Listagem de Pacientes
+![Exemplo de listagem de pacientes](public/example-patients.png)
+
+### Listagem de Agendamentos
+![Exemplo de listagem de agendamentos](public/example-appointments.png)
+
+### Assinatura
+![Exemplo de assinatura](public/example-subscription.png)
