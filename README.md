@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Dr. Agenda Preview" src="public/logo.svg" width="40%">
+  <img alt="Dr. Agenda Preview" src="public/white-logo.svg" width="40%">
 </p>
 
 > **Dr. Agenda** é uma plataforma web para gestão de clínicas médicas, permitindo o gerenciamento de profissionais, pacientes, agendamentos e controle de disponibilidade de horários de forma simples e eficiente.
